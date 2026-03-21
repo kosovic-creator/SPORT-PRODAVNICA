@@ -1,0 +1,10 @@
+{
+  "name": "shared-nextauth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "next-auth": "^4.24.13"
+  }
+}

@@ -4,7 +4,23 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "baseUrl": ".",
-    "paths": {},
+    "paths": {
+      "@shared-ui/shadcn/*": [
+        "packages/shared-ui/shadcn/*"
+      ],
+      "@shared-ui/*": [
+        "packages/shared-ui/*"
+      ],
+      "@shared-nextauth/*": [
+        "packages/shared-nextauth/*"
+      ],
+      "@admin/lib/*": [
+        "apps/admin/lib/*"
+      ],
+      "@web/lib/*": [
+        "apps/web/lib/*"
+      ]
+    },
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
