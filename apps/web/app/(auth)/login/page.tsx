@@ -13,22 +13,22 @@ export default function LoginPage() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setError(null);
-    setSuccess(null);
+      setError(null);
     setLoading(true);
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const res = await fetch("/api/auth/login", {
-      method: "POST",
-      body: formData,
+      const email = formData.get("email") as string;
+      const password = formData.get("password") as string;
+      const { signIn } = await import("next-auth/react");
+      const res = await signIn("credentials", {
+          redirect: false,
+          email,
+          password,
+          callbackUrl: "/",
     });
     setLoading(false);
-    const data = await res.json();
-    if (data.error) setError(data.error);
-    else {
-      setSuccess("Prijava uspješna!");
-      router.push("/");
-    }
+      if (res?.error) setError("Pogrešan email ili lozinka.");
+      else if (res?.ok) router.push("/");
   }
 
   return (
