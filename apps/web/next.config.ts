@@ -4,4 +4,4 @@ const nextConfig = {
     turbo: false
   }
 };
-export default nextConfig;
+module.exports = nextConfig;
